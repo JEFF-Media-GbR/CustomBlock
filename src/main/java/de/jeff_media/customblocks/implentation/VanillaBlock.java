@@ -3,8 +3,6 @@ package de.jeff_media.customblocks.implentation;
 import com.google.common.base.Enums;
 import de.jeff_media.customblocks.CustomBlock;
 import com.jeff_media.jefflib.exceptions.InvalidBlockDataException;
-import lombok.Getter;
-import lombok.Setter;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.OfflinePlayer;
@@ -15,8 +13,10 @@ import java.util.Locale;
 
 public class VanillaBlock extends CustomBlock {
 
-    @Getter
-    @Setter
+    public BlockData getBlockData() {
+        return blockData;
+    }
+
     private final BlockData blockData;
 
     public VanillaBlock(Material mat) {

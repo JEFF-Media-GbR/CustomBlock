@@ -6,7 +6,7 @@
 
     <groupId>com.jeff_media</groupId>
     <artifactId>CustomBlocks</artifactId>
-    <version>1.5.23</version>
+    <version>1.5.24</version>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -35,6 +35,11 @@
             <id>nexo-snapshots</id>
             <name>Nexo Repository</name>
             <url>https://repo.nexomc.com/snapshots</url>
+        </repository>
+        <repository>
+            <id>nexomc-releases</id>
+            <name>Reposilite Repository</name>
+            <url>https://repo.nexomc.com/releases</url>
         </repository>
     </repositories>
 
@@ -110,21 +115,18 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.34</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
             <groupId>com.nexomc</groupId>
             <artifactId>nexo</artifactId>
-            <version>0.2.1-dev.4</version>
+            <version>1.29.0-dev.7</version>
             <scope>provided</scope>
-            <classifier>dev</classifier>
             <exclusions>
                 <exclusion>
                     <groupId>net.byteflux</groupId>
                     <artifactId>libby-bukkit</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>dev.triumphteam</groupId>
+                    <artifactId>triumph-gui</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>

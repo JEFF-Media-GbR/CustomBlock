@@ -1,12 +1,8 @@
 package de.jeff_media.customblocks;
 
-import lombok.Getter;
-import lombok.NonNull;
-import lombok.Setter;
 import org.bukkit.Bukkit;
 import org.bukkit.block.Block;
 import org.bukkit.entity.ArmorStand;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.util.BoundingBox;
 
 import java.util.Collection;
@@ -15,9 +11,6 @@ import java.util.stream.Collectors;
 
 public class CustomBlockUtils {
 
-    @Getter
-    @Setter
-    @NonNull
     private static Logger logger = Bukkit.getLogger();
 
     public static boolean isDebug() {
@@ -26,7 +19,7 @@ public class CustomBlockUtils {
 
     public static void debug(String message) {
 
-        if(isDebug()) {
+        if (isDebug()) {
             logger.info("[CustomBlocks] " + message);
         }
 
@@ -42,5 +35,13 @@ public class CustomBlockUtils {
                 .filter(entity -> entity instanceof ArmorStand)
                 .map(entity -> (ArmorStand) entity)
                 .collect(Collectors.toList());
+    }
+
+    public static Logger getLogger() {
+        return CustomBlockUtils.logger;
+    }
+
+    public static void setLogger(Logger logger) {
+        CustomBlockUtils.logger = logger;
     }
 }
